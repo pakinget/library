@@ -64,11 +64,7 @@ addBookBtn.addEventListener("click", () => {
 	let submitBtn = document.createElement("button");
 	submitBtn["type"] = "submit";
 	submitBtn.textContent = "Submit";
-	let cancelBtn = document.createElement("button");
-	cancelBtn["type"] = "button";
-	cancelBtn.textContent = "Cancel";
 	form.appendChild(submitBtn);
-	form.appendChild(cancelBtn);
 
 	formCont.appendChild(formText);
 	formCont.appendChild(form);
@@ -76,6 +72,10 @@ addBookBtn.addEventListener("click", () => {
 	let formBackground = document.createElement("div");
 	formBackground.classList.add("formBackground");
 	formBackground.appendChild(form);
+	formBackground.addEventListener("click", () => {
+		const formBackground = document.querySelector(".formBackground");
+		formBackground.remove();
+	});
 	body.appendChild(formBackground);
 });
 
