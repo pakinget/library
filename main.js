@@ -90,8 +90,8 @@ addBookBtn.addEventListener("click", () => {
 	body.appendChild(formBackground);
 });
 
-for (let i = 0; i < 100; i++) {
-	addBook("1", "2", 3, false);
+for (let i = 1; i < 51; i++) {
+	addBook(`testauthor${i}`, `testtitle${i}`, "611", true);
 }
 
 displayBooks();

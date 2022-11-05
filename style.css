@@ -132,11 +132,10 @@ table {
 body {
 	min-height: 100vh;
 	display: grid;
-	grid-direction: column;
+	grid-template-rows: 10vh 90vh;
 }
 
 header {
-	height: 10vh;
 	display: grid;
 	grid-template-columns: 1fr repeat(2, 10vw);
 	align-items: center;
