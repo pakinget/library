@@ -3,6 +3,7 @@
 let library = [];
 const body = document.querySelector("body");
 const addBookBtn = document.querySelector(".addBook");
+const removeAllBtn = document.querySelector(".removeAll");
 
 function Book(author, title, pages, read) {
 	this.author = author;
@@ -21,6 +22,10 @@ function addBook(author, title, pages, read) {
 }
 
 function displayBooks() {
+	const books = document.querySelectorAll(".card");
+	books.forEach((book) => {
+		book.remove();
+	});
 	library.forEach((book) => {
 		let card = document.createElement("div");
 		card.classList.add("card");
@@ -88,6 +93,11 @@ addBookBtn.addEventListener("click", () => {
 		if (event.target == formBackground) formBackground.remove();
 	});
 	body.appendChild(formBackground);
+});
+
+removeAllBtn.addEventListener("click", () => {
+	library = [];
+	displayBooks();
 });
 
 for (let i = 1; i < 51; i++) {

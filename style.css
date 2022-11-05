@@ -132,7 +132,7 @@ table {
 body {
 	min-height: 100vh;
 	display: grid;
-	grid-template-rows: 10vh 90vh;
+	grid-template-rows: 10vh 1fr;
 }
 
 header {
