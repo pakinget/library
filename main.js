@@ -70,15 +70,20 @@ addBookBtn.addEventListener("click", () => {
 	submitBtn["type"] = "submit";
 	submitBtn.textContent = "Submit";
 	submitBtn.addEventListener("click", (event) => {
+		event.preventDefault();
 		const author = document.querySelector("#author");
+		const textPattern = /^[a-z\s]+$/i;
 		const title = document.querySelector("#title");
 		const pages = document.querySelector("#pages");
+		const numPattern = /^[0-9]+$/;
 		const read = document.querySelector("#read");
-		addBook(author.value, title.value, pages.value, read.value);
-		displayBooks();
-		const formBackground = document.querySelector(".formBackground");
-		formBackground.remove();
-		event.preventDefault();
+		const readPattern = /^[true|false]+$/;
+		if (textPattern.test(author.value) && textPattern.test(title.value) && numPattern.test(pages.value) && readPattern.test(read.value)) {
+			addBook(author.value, title.value, pages.value, read.value);
+			displayBooks();
+			const formBackground = document.querySelector(".formBackground");
+			formBackground.remove();
+		}
 	});
 	form.appendChild(submitBtn);
 
