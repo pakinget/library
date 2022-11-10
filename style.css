@@ -157,10 +157,15 @@ h1 {
 	font-weight: 900;
 }
 
-.book {
+.card {
 	min-height: 25vh;
-	display: flex;
-	flex-direction: column;
+	display: grid;
+	grid-template-rows: repeat(5, 1fr);
+}
+
+.bookControls {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 }
 
 .form {
