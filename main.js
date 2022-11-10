@@ -28,6 +28,11 @@ Book.prototype.edit = function (author, title, pages, read, origin) {
 	props[3].textContent = read;
 };
 
+Book.prototype.remove = function (origin) {
+	origin.remove();
+	library.splice(library.indexOf(this), 1);
+};
+
 function addBook(author, title, pages, read) {
 	let book = new Book(author, title, pages, read);
 	library.push(book);
