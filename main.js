@@ -16,6 +16,13 @@ Book.prototype.hello = function () {
 	console.log(`Hi! I was written by ${this.author}, my title is ${this.title} and I have a total of ${this.pages} pages. It is ${this.read} that you read me yet.`);
 };
 
+Book.prototype.edit = function (author, title, pages, read) {
+	this.author = author;
+	this.title = title;
+	this.pages = pages;
+	this.read = read;
+};
+
 function addBook(author, title, pages, read) {
 	let book = new Book(author, title, pages, read);
 	library.push(book);
@@ -43,7 +50,7 @@ function displayBooks() {
 	});
 }
 
-addBookBtn.addEventListener("click", () => {
+function createForm(origin) {
 	let formCont = document.createElement("div");
 	formCont.classList.add("form");
 	let formText = document.createElement("p");
@@ -62,8 +69,6 @@ addBookBtn.addEventListener("click", () => {
 		input["name"] = props[i];
 		input["type"] = "text";
 		form.appendChild(input);
-
-		console.log(label.for);
 	}
 
 	let submitBtn = document.createElement("button");
@@ -72,16 +77,27 @@ addBookBtn.addEventListener("click", () => {
 	submitBtn.addEventListener("click", (event) => {
 		event.preventDefault();
 		const author = document.querySelector("#author");
-		const textPattern = /^[a-z\s]+$/i;
+		const textPattern = /^[a-z0-9\s]+$/i;
 		const title = document.querySelector("#title");
 		const pages = document.querySelector("#pages");
 		const numPattern = /^[0-9]+$/;
 		const read = document.querySelector("#read");
 		const readPattern = /^[true|false]+$/;
 		if (textPattern.test(author.value) && textPattern.test(title.value) && numPattern.test(pages.value) && readPattern.test(read.value)) {
-			addBook(author.value, title.value, pages.value, read.value);
-			displayBooks();
-			const formBackground = document.querySelector(".formBackground");
+			if (origin === "newBook") {
+				addBook(author.value, title.value, pages.value, read.value);
+				displayBooks();
+			}
+			else {
+				const books = Array.from(document.querySelectorAll(".card"));
+				let book = library[books.indexOf(origin)];
+				book.edit(author.value, title.value, pages.value, read.value);
+				let props = Array.from(origin.childNodes);
+				props[0].textContent = author.value;
+				props[1].textContent = title.value;
+				props[2].textContent = pages.value;
+				props[3].textContent = read.value;
+			}
 			formBackground.remove();
 		}
 	});
@@ -98,6 +114,10 @@ addBookBtn.addEventListener("click", () => {
 		if (event.target == formBackground) formBackground.remove();
 	});
 	body.appendChild(formBackground);
+}
+
+addBookBtn.addEventListener("click", () => {
+	createForm("newBook");
 });
 
 removeAllBtn.addEventListener("click", () => {
