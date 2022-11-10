@@ -51,6 +51,27 @@ function displayBooks() {
 				i++;
 			}
 		}
+		let controls = document.createElement("div");
+		controls.classList.add("bookControls");
+		let editBtn = document.createElement("button");
+		editBtn.textContent = "Edit";
+		editBtn.addEventListener("click", (event) => {
+			createForm(event.target.parentNode.parentNode);
+		});
+		controls.appendChild(editBtn);
+
+		let removeBtn = document.createElement("button");
+		removeBtn.textContent = "Remove";
+		removeBtn.addEventListener("click", (event) => {
+			const books = Array.from(document.querySelectorAll(".card"));
+			const index = books.indexOf(event.target.parentNode.parentNode);
+			let book = library[index];
+			book.remove(index);
+		});
+		controls.appendChild(removeBtn);
+
+		card.appendChild(controls);
+
 		const main = document.querySelector("main");
 		main.appendChild(card);
 	});
