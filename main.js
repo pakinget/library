@@ -16,11 +16,16 @@ Book.prototype.hello = function () {
 	console.log(`Hi! I was written by ${this.author}, my title is ${this.title} and I have a total of ${this.pages} pages. It is ${this.read} that you read me yet.`);
 };
 
-Book.prototype.edit = function (author, title, pages, read) {
+Book.prototype.edit = function (author, title, pages, read, origin) {
 	this.author = author;
 	this.title = title;
 	this.pages = pages;
 	this.read = read;
+	let props = Array.from(origin.childNodes);
+	props[0].textContent = author.value;
+	props[1].textContent = title.value;
+	props[2].textContent = pages.value;
+	props[3].textContent = read.value;
 };
 
 function addBook(author, title, pages, read) {
@@ -91,12 +96,7 @@ function createForm(origin) {
 			else {
 				const books = Array.from(document.querySelectorAll(".card"));
 				let book = library[books.indexOf(origin)];
-				book.edit(author.value, title.value, pages.value, read.value);
-				let props = Array.from(origin.childNodes);
-				props[0].textContent = author.value;
-				props[1].textContent = title.value;
-				props[2].textContent = pages.value;
-				props[3].textContent = read.value;
+				book.edit(author.value, title.value, pages.value, read.value, origin);
 			}
 			formBackground.remove();
 		}
