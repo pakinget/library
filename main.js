@@ -22,10 +22,10 @@ Book.prototype.edit = function (author, title, pages, read, origin) {
 	this.pages = pages;
 	this.read = read;
 	let props = Array.from(origin.childNodes);
-	props[0].textContent = author.value;
-	props[1].textContent = title.value;
-	props[2].textContent = pages.value;
-	props[3].textContent = read.value;
+	props[0].textContent = author;
+	props[1].textContent = title;
+	props[2].textContent = pages;
+	props[3].textContent = read;
 };
 
 function addBook(author, title, pages, read) {
