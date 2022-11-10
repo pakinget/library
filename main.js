@@ -16,21 +16,17 @@ Book.prototype.hello = function () {
 	console.log(`Hi! I was written by ${this.author}, my title is ${this.title} and I have a total of ${this.pages} pages. It is ${this.read} that you read me yet.`);
 };
 
-Book.prototype.edit = function (author, title, pages, read, origin) {
+Book.prototype.edit = function (author, title, pages, read,) {
 	this.author = author;
 	this.title = title;
 	this.pages = pages;
 	this.read = read;
-	let props = Array.from(origin.childNodes);
-	props[0].textContent = author;
-	props[1].textContent = title;
-	props[2].textContent = pages;
-	props[3].textContent = read;
+	displayBooks();
 };
 
-Book.prototype.remove = function (origin) {
-	origin.remove();
-	library.splice(library.indexOf(this), 1);
+Book.prototype.remove = function (index) {
+	library.splice(index, 1);
+	displayBooks();
 };
 
 function addBook(author, title, pages, read) {
@@ -101,7 +97,7 @@ function createForm(origin) {
 			else {
 				const books = Array.from(document.querySelectorAll(".card"));
 				let book = library[books.indexOf(origin)];
-				book.edit(author.value, title.value, pages.value, read.value, origin);
+				book.edit(author.value, title.value, pages.value, read.value);
 			}
 			formBackground.remove();
 		}
