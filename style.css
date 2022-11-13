@@ -160,12 +160,12 @@ h1 {
 }
 
 .headBtn {
-	border: none;
-	border-radius: 10px;
 	font-size: 1.25rem;
 }
 
 button {
+	border: none;
+	border-radius: 10px;
 	background-color: #45C4B0;
 	color: #012030;
 }
