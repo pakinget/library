@@ -168,6 +168,7 @@ button {
 	border-radius: 10px;
 	background-color: #45C4B0;
 	color: #012030;
+	height: 60%;
 }
 
 button:hover {
