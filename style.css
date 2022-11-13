@@ -132,7 +132,7 @@ table {
 body {
 	min-height: 100vh;
 	display: grid;
-	grid-template-rows: 10vh 1fr;
+	grid-template-rows: 5rem 1fr;
 	background: #012030;
 	color: #DAFDBA;
 }
@@ -156,11 +156,13 @@ header {
 
 h1 {
 	font-weight: 900;
+	font-size: 4rem;
 }
 
 .headBtn {
 	border: none;
 	border-radius: 10px;
+	font-size: 1.25rem;
 }
 
 button {
