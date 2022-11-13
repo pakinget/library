@@ -181,9 +181,9 @@ button:active {
 }
 
 .card {
-	min-height: 25vh;
+	height: 25vh;
 	display: grid;
-	grid-template-rows: repeat(5, 1fr);
+	grid-template-rows: repeat(5, 5vh);
 }
 
 .bookControls {
