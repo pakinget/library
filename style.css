@@ -184,6 +184,10 @@ button:active {
 	height: 25vh;
 	display: grid;
 	grid-template-rows: repeat(5, 5vh);
+	border: #DAFDBA 1px solid;
+	border-radius: 10px;
+	padding: 1vh 1vw;
+	box-shadow: 5px 5px 10px #13678A;
 }
 
 .bookControls {
