@@ -133,8 +133,8 @@ body {
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: 10vh 1fr;
-	background: #423855;
-	color: #F5F5F5;
+	background: #012030;
+	color: #DAFDBA;
 }
 
 header {
@@ -155,28 +155,27 @@ header {
 }
 
 h1 {
-	font-size: 5vh;
 	font-weight: 900;
 }
 
 .headBtn {
-	border: #A19D5A 2px solid;
+	border: none;
 	border-radius: 10px;
 }
 
 button {
-	background-color: #AF94E0;
-	color: #2E273B;
+	background-color: #45C4B0;
+	color: #012030;
 }
 
 button:hover {
 	cursor: pointer;
-	background-color: #7D6AA1;
+	background-color: #2E8578;
 }
 
 button:active {
-	background-color: #2E273B;
-	color: #F5F5F5;
+	background-color: #18453E;
+	color: #DAFDBA;
 }
 
 .card {
