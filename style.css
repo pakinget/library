@@ -159,6 +159,11 @@ h1 {
 	font-weight: 900;
 }
 
+.headBtn {
+	border: #A19D5A 2px solid;
+	border-radius: 10px;
+}
+
 button {
 	background-color: #AF94E0;
 	color: #2E273B;
