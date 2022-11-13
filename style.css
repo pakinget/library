@@ -133,6 +133,8 @@ body {
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: 10vh 1fr;
+	background: #423855;
+	color: #F5F5F5;
 }
 
 header {
@@ -144,17 +146,32 @@ header {
 main {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 1vw;
 }
 
 main,
 header {
 	padding: 1vh 1vw;
+	gap: 1vw;
 }
 
 h1 {
 	font-size: 5vh;
 	font-weight: 900;
+}
+
+button {
+	background-color: #AF94E0;
+	color: #2E273B;
+}
+
+button:hover {
+	cursor: pointer;
+	background-color: #7D6AA1;
+}
+
+button:active {
+	background-color: #2E273B;
+	color: #F5F5F5;
 }
 
 .card {
