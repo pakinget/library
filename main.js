@@ -87,14 +87,14 @@ function createForm(origin) {
 
 	for (let i = 0; i < props.length; i++) {
 		let label = document.createElement("label");
-		label["for"] = props[i];
+		label.htmlFor = `${props[i]}`;
 		label.textContent = `${props[i]}`;
 		form.appendChild(label);
 
 		let input = document.createElement("input");
-		input["id"] = props[i];
-		input["name"] = props[i];
-		input["type"] = "text";
+		input.id = props[i];
+		input.name = props[i];
+		input.type = "text";
 		form.appendChild(input);
 	}
 
