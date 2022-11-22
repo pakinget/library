@@ -94,7 +94,15 @@ function createForm(origin) {
 		let input = document.createElement("input");
 		input.id = props[i];
 		input.name = props[i];
-		input.type = "text";
+		if (props[i] === "pages") {
+			input.min = "1";
+			input.type = "number";
+		}
+		else input.type = "text";
+		if (props[i] === "author" || props[i] === "title")
+			input.pattern = "^[a-zA-Z0-9\s]+$";
+		else if (props[i] === "read") input.pattern = "^true|false$";
+
 		form.appendChild(input);
 	}
 
@@ -104,13 +112,10 @@ function createForm(origin) {
 	submitBtn.addEventListener("click", (event) => {
 		event.preventDefault();
 		const author = document.querySelector("#author");
-		const textPattern = /^[a-z0-9\s]+$/i;
 		const title = document.querySelector("#title");
 		const pages = document.querySelector("#pages");
-		const numPattern = /^[0-9]+$/;
 		const read = document.querySelector("#read");
-		const readPattern = /^[true|false]+$/;
-		if (textPattern.test(author.value) && textPattern.test(title.value) && numPattern.test(pages.value) && readPattern.test(read.value)) {
+		if (author.checkValidity() && title.checkValidity() && pages.checkValidity() && read.checkValidity()) {
 			if (origin === "newBook") {
 				addBook(author.value, title.value, pages.value, read.value);
 				displayBooks();
