@@ -129,12 +129,23 @@ table {
 	border-spacing: 0;
 }
 
+@font-face {
+	font-family: "JelleeBold";
+	src: url("/fonts/Jellee-Bold.otf");
+}
+
+@font-face {
+	font-family: "MetropolitanoMedium";
+	src: url(/fonts/Metropolitano-Medium.ttf);
+}
+
 body {
 	min-height: 100vh;
 	display: grid;
 	grid-template-rows: 5rem 1fr;
 	background: #012030;
 	color: #DAFDBA;
+	font-family: "MetropolitanoMedium";
 }
 
 header {
@@ -157,6 +168,7 @@ header {
 h1 {
 	font-weight: 900;
 	font-size: 4rem;
+	font-family: "JelleeBold";
 }
 
 .headBtn {
@@ -169,6 +181,7 @@ button {
 	background-color: #45C4B0;
 	color: #012030;
 	height: 60%;
+	font-family: "JelleeBold";
 }
 
 button:hover {
