@@ -1,6 +1,6 @@
 # Credits
 ## Fonts
-# Jellee Typeface
+### Jellee Typeface
 https://fontlibrary.org/en/font/jellee-typeface
-# Metropolitano
+### Metropolitano
 https://fontlibrary.org/en/font/metropolitano
