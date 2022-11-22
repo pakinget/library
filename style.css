@@ -228,6 +228,14 @@ input {
 	border-radius: 10px;
 }
 
+input:invalid {
+	border: 2px #7D0F1A solid;
+}
+
+input:valid {
+	border: 2px #137D0F solid;
+}
+
 .formBackground {
 	position: absolute;
 	width: 100vw;
